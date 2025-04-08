@@ -12,6 +12,5 @@ $ sudo -i
 root@cp:~# apt update && apt upgrade -y
 ```
 
-With the system updated, the next step is to install a **container runtime**. A commonly used option, easy to deploy and lightweight is `containerd`.
-
+With the system updated, the next step is to install a **container runtime**. A commonly used option, easy to deploy and lightweight is `containerd`. Also, Kubernetes has deprecated Docker engine as of 2020, and `containerd` offers simplicity and focus as it doesn't include the additional stuff that Docker includes. This is purely a container runtime which supports the Container Runtime Interface or CRI as expected by Kubernetes.
 
