@@ -1,4 +1,4 @@
-# How to install a Kubernetes cluster
+# How to install a Kubernetes cluster – Part 1
 There are multiple tools to install Kubernetes. A community supported tool is `kubeadm` and this lab uses it to install and build a Kubernetes cluster.
 
 ## Connecting to future control plane and worker nodes
@@ -35,3 +35,8 @@ root@cp:˜# cat << EOF | tee /etc/sysctl.d/kubernetes.conf
 > net.ipv4.ip_forward = 1
 EOF
 ```
+Once those rules have been added, we ensure the changes are loaded by the current kernel.
+```bash
+root@cp:~# sysctl --system
+```
+That's part 1 on this series. The next part will deal with the installation of the `containerd` runtime and the Kubernetes software itself.
