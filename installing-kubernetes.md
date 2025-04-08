@@ -24,3 +24,14 @@ Next, two kernel modules need to be loaded due to Kubernetes infrastructure requ
 root@cp:˜# modprobe overlay
 root@cp:˜# modprobe br_netfilter
 ```
+
+Finally, we need to tweak the network routing and policies as Kubernetes relies on `iptables` rules. Without creating the rules below, network packets may bypass `iptables` rules and inter-pod communication **would fail**.
+The below command creates a configuration file `kubernetes.conf` at `/etc/sysctl.d` and it's loaded when the system starts. The two lines below, starting with `net.bridge…` ensure that IPv4 and IPv6 packets follow `iptables` rules. Finally, `ip_forward` enables IP forwarding in the Linux kernel.
+
+```bash
+root@cp:˜# cat << EOF | tee /etc/sysctl.d/kubernetes.conf
+> net.bridge.bridge-nf-call-ip6tables = 1
+> net.bridge.bridge-nf-call-iptables = 1
+> net.ipv4.ip_forward = 1
+EOF
+```
