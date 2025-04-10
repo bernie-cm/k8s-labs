@@ -1,5 +1,5 @@
 # Building a Kubernetes Cluster from Scratch: Part 2 - Installing Container Runtime and Kubernetes Components
-This is the second part of my Kubernetes installation series using `kubeadm`. In [Part 1](), I covered the environment preparation, including hardware requirements and network configuration, as well as required Linux kernel modules.
+This is the second part of my Kubernetes installation series using `kubeadm`. In [Part 1](https://bernieops.com/building-a-kubernetes-cluster-from-scratch-part-1-environment-setup), I covered the environment preparation, including hardware requirements and network configuration, as well as required Linux kernel modules.
 
 In this Part 2, I'll continue by installing and configuring `containerd` as my container runtime and the installation of the essential Kubernetes componets like kubeadm, kubelet, and kubectl.
 
