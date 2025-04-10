@@ -1,4 +1,7 @@
-# Installing Kubernetes - Part 2
+# Building a Kubernetes Cluster from Scratch: Part 2 - Installing Container Runtime and Kubernetes Components
+This is the second part of my Kubernetes installation series using `kubeadm`. In [Part 1](), I covered the environment preparation, including hardware requirements and network configuration, as well as required Linux kernel modules.
+
+In this Part 2, I'll continue by installing and configuring `containerd` as my container runtime and the installation of the essential Kubernetes componets like kubeadm, kubelet, and kubectl.
 
 ## Installing the container runtime
 Kubernetes is a container orchestration system, and as such it needs a **container runtime** responsible for running the containers in the cluster. The container runtime pulls the images, starts/stops the containers and report container status back to Kubernetes.
