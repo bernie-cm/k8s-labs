@@ -33,3 +33,11 @@ root@cp:~# echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] \
 https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /" \
 | tee /etc/apt/sources.list.d/kubernetes.list
 ```
+
+Finally, update the repo and install the Kubernetes software
+```bash
+root@cp:~# apt-get update
+root@cp:~# apt-get install -y kubeadm=1.31.1-1.1 kubelete=1.31.1-1.1 kubectl=1.31.1-1.1
+```
+
+In the next part of this series, I will set the local DNS alias for my `cp` Kubernetes server and assign it with the name `k8scp`. Then I will create a configuration file for the cluster.
