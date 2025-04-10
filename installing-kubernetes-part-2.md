@@ -21,3 +21,15 @@ root@cp:~# apt-get update && apt-get install containerd.io -y
 root@cp:~# containerd config default | tee /etc/containerd/config.toml
 root@cp:~# systemctl restart containerd 
 ```
+
+## Installing the Kubernetes software
+First, like with containerd, we need to download the public key for the package repositories.
+```bash
+root@cp:~# curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key \
+| sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+# Add the appropriate k8s repository
+root@cp:~# echo "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] \
+https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /" \
+| tee /etc/apt/sources.list.d/kubernetes.list
+```
