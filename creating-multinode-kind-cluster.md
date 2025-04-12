@@ -17,3 +17,14 @@ With the `config.yaml` created, use `kind` to create the new cluster.
 ```bash
 $ kind cluster create --config config.yaml
 ```
+
+## Accessing the new cluster
+When deploying a new cluster, `kind` will use Docker to create the new nodes. To access the control plane, for example, you would do so.
+```bash
+$ docker exec -it kind-control-plane bash
+root@kind-control-plane:/# kubectl get no
+NAME                 STATUS   ROLES           AGE     VERSION
+kind-control-plane   Ready    control-plane   7m3s    v1.32.2
+kind-worker          Ready    <none>          6m52s   v1.32.2
+kind-worker2         Ready    <none>          6m52s   v1.32.2
+```
