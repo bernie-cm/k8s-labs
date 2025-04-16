@@ -17,5 +17,9 @@ The datastore etcd, also known as the cluster store, has all the stateful config
 - Have `etcdctl` installed
 ```bash
 $ sudo apt update; apt install -y etcd-client
-
+# Following that we can perform a snapshot backup of the etcd datastore
+$ etcdctl snapshot save snapshotdb --cacert /etc/kubernetes/pki/etcd/ca.crt --cert /etc/kubernetes/pki/etcd/server.crt --key /etc/kubernetes/pki/server.key
+# ... output omitted
+Snapshot saved at snapshotdb
 ```
+The above command creates a snapshot in the current directory called `snapshotdb`.
