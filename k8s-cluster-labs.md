@@ -24,12 +24,13 @@ Snapshot saved at snapshotdb
 ```
 The above command creates a snapshot in the current directory called `snapshotdb`.
 To check the status of the snapshot you can use `$ etcdctl snapshot status snapshotdb --write-out=table`. This will generate a table like below
+```
 +----------+----------+------------+------------+
 |   HASH   | REVISION | TOTAL KEYS | TOTAL SIZE |
 +----------+----------+------------+------------+
 | e4f4157c |   102366 |        817 |     2.2 MB |
 +----------+----------+------------+------------+
-
+```
 ## Restoring etcd from snapshot
 If needed, we can use etcdctl to also restore the backed up version of the datastore. In order to perform the restore operation, we need to specify a directory already accessed by etcd. By checking the `etcd.yaml` file in the `/etc/kubernetes/manifests` directory, we can change that directory to something like `/var/lib/etcd-restore`.
 ```bash
