@@ -8,5 +8,5 @@ $ kubectl get po
 
 # To get information about the pods running in a specific namespace and showing their IP addresses
 # in this example the kube-system namespace
-$ kubectl get po -o wide -A -n kube-system
+$ kubectl get po -n kube-system -o wide
 ```
