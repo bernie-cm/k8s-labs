@@ -1,5 +1,4 @@
-# Labs for how to manage Kubernetes cluster
-
+# Kubernetes Administration 101: Basic Cluster Tasks Every Admin Should Know
 ## Examining pods
 Using `kubectl` we can examine the pods running in the cluster. The simplest way is to run this command.
 ```bash
