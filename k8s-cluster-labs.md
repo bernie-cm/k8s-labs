@@ -30,3 +30,11 @@ To check the status of the snapshot you can use `$ etcdctl snapshot status snaps
 | e4f4157c |   102366 |        817 |     2.2 MB |
 +----------+----------+------------+------------+
 
+## Restoring etcd from snapshot
+If needed, we can use etcdctl to also restore the backed up version of the datastore. In order to perform the restore operation, we need to specify a directory already accessed by etcd. By checking the `etcd.yaml` file in the `/etc/kubernetes/manifests` directory, we can change that directory to something like `/var/lib/etcd-restore`.
+```bash
+$ etcdctl snapshot restore <snapshot-name> --data-dir /var/lib/etcd-restore
+```
+
+## Upgrading Kubernetes version
+The last task we will perform in this lab is upgrading the version of `kubeadm`. For example, if in the exam there's a question about a company needing to upgrade the Kubernetes controller to version X, then we know that `kubeadm` is the tool to use.
