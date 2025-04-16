@@ -38,3 +38,20 @@ $ etcdctl snapshot restore <snapshot-name> --data-dir /var/lib/etcd-restore
 
 ## Upgrading Kubernetes version
 The last task we will perform in this lab is upgrading the version of `kubeadm`. For example, if in the exam there's a question about a company needing to upgrade the Kubernetes controller to version X, then we know that `kubeadm` is the tool to use.
+The first thing to do is to view the version of our control plane components.
+```bash
+# This will show a list of control plane components and their current version
+# as well as the version to which we can upgrade
+$ kubeadm upgrade plan
+
+COMPONENT                 NODE                      CURRENT    TARGET
+kube-apiserver            acing-cka-control-plane   v1.32.2    v1.32.3
+kube-controller-manager   acing-cka-control-plane   v1.32.2    v1.32.3
+kube-scheduler            acing-cka-control-plane   v1.32.2    v1.32.3
+kube-proxy                                          1.32.2     v1.32.3
+CoreDNS                                             v1.11.3    v1.11.3
+etcd                      acing-cka-control-plane   3.5.16-0   3.5.16-0
+```
+After running the command above you will get the command needed to upgrade, as output.
+`$ kubeadm upgrade apply v1.32.3`
+
