@@ -23,3 +23,10 @@ $ etcdctl snapshot save snapshotdb --cacert /etc/kubernetes/pki/etcd/ca.crt --ce
 Snapshot saved at snapshotdb
 ```
 The above command creates a snapshot in the current directory called `snapshotdb`.
+To check the status of the snapshot you can use `$ etcdctl snapshot status snapshotdb --write-out=table`. This will generate a table like below
++----------+----------+------------+------------+
+|   HASH   | REVISION | TOTAL KEYS | TOTAL SIZE |
++----------+----------+------------+------------+
+| e4f4157c |   102366 |        817 |     2.2 MB |
++----------+----------+------------+------------+
+
