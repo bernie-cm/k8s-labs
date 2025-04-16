@@ -9,6 +9,7 @@ $ kubectl get po
 # in this example the kube-system namespace
 $ kubectl get po -n kube-system -o wide
 ```
+By using the `-o wide` option we can get additional information, including a column specifying the IP addresses. 
 
 ## Performing a backup of etcd
 The datastore etcd, also known as the cluster store, has all the stateful configuration information about our cluster. One common operation is to back up the etcd datastore using a CLI utility called `etcdctl`.
