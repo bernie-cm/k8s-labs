@@ -38,3 +38,10 @@ Once the YAML has been defined, it's very simple to create the ReplicaSet.
 $ kubectl apply -f replica-set.yaml`
 replicaset.apps/replicaset-1 created
 ```
+
+## Scaling a ReplicaSet
+They can be scaled up or down to fit your operational demands. The ReplicaSet controller will determined which pod(s) to delete, in case of a scale down event, or where to run a new pod in the case of a scale up event.
+```bash
+$ kubectl scale rs replica-set --replicas=5
+```
+The flag `--replicas=5` will now scale the ReplicaSet to 5 pods. This could mean you're scaling down or up to 5 pods. The command is the same, which is useful and efficient.
