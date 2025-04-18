@@ -9,7 +9,7 @@ $ kubectl get rs
 NAME              DESIRED   CURRENT   READY   AGE
 new-replica-set   4         4         0       5m12s
 ```
-Here we can see that there are 4 desired pods in the RepicaSet spec, and there are 4 pods running. Even if we deleted one of the pods with `kubectl delete pod <name-of-pod>`, the ReplicaSet will ensure another pod is running to match the number of replicas, i.e., 4.
+Here we can see that there are 4 desired pods in the ReplicaSet spec, and there are 4 pods running. Even if we deleted one of the pods with `kubectl delete pod <name-of-pod>`, the ReplicaSet will ensure another pod is running to match the number of replicas, i.e., 4.
 
 ## Creating a ReplicaSet
 Like most objects in k8s, the easiest way to create a ReplicaSet is using a YAML file.
