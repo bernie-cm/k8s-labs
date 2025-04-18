@@ -32,3 +32,9 @@ spec:
       - name: nginx
       - image: nginx
 ```
+
+Once the YAML has been defined, it's very simple to create the ReplicaSet.
+```bash
+$ kubectl apply -f replica-set.yaml`
+replicaset.apps/replicaset-1 created
+```
