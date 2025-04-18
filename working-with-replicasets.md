@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: nginx
-      - image: nginx
+        image: nginx
 ```
 
 Once the YAML has been defined, it's very simple to create the ReplicaSet.
