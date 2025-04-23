@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: label-lab
+  name: label-lab
+spec:
+  containers:
+  - image: nginx
+    name: label-lab
+    resources: {}
+  nodeSelector:
+    disk: ssd
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
