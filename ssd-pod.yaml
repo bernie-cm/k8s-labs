@@ -1,3 +1,5 @@
+# This YAML includes the usage of nodeAffinity as another method
+# to target nodes that have specific attributes/labels
 apiVersion: v1
 kind: Pod
 metadata:
