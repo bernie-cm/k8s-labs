@@ -1,3 +1,5 @@
+# Sample YAML for a pod manifest that includes the usage
+# of nodeSelector labels to target a node that has been labelled
 apiVersion: v1
 kind: Pod
 metadata:
