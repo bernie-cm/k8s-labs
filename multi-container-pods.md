@@ -1,3 +1,4 @@
+# Multi-container pods
 ### What are they?
 In the microservices world, it's a good idea to deploy one container per pod in accordance with the **single responsibility principle** or **separation of concerns**. You have a web app that reads content from a remote repo and serves it as a web page, then you should design it as two microservices. But you could also deploy the two containers in a single pod so the syncing bit can load the data and mount it as a volume for the web component to read. Sharing resources in the one execution env.
 
