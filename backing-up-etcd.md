@@ -28,3 +28,21 @@ $ etcdctl snapshot restore etcd-backup --data-dir /var/lib/etcd-backup
 
 ### Change the location of the etcd data
 Once the backup and restore operations are completed, the next step is to change the location where Kubernetes looks for the `etcd` data. 
+
+To do this, we need to change the YAML file for the `etcd.yaml` manifest which is located in `/etc/kubernetes/manifests/`. Why in this directory? Because any YAML placed in this directory will be scheduled by the `kube-scheduler` process.
+
+The part of the file that needs to be changed is at the bottom.
+
+```yaml
+volumes:
+- hostPath:
+    path: /etc/kubernetes/pki/etcd
+    type: DirectoryOrCreate
+  name: etcd-certs
+- hostPath:
+    path: /var/lib/etcd-backup # <--- This is the directory where we stored the snapshot
+    type: DirectoryOrCreate
+  name: etcd-data
+```
+
+With that done, Kubernetes will perform the necessary actions and receive an API response from the server with the new cluster data.
