@@ -25,3 +25,6 @@ $ etcdctl snapshot restore etcd-backup --data-dir /var/lib/etcd-backup
 
 # ... Output omitted
 ```
+
+### Change the location of the etcd data
+Once the backup and restore operations are completed, the next step is to change the location where Kubernetes looks for the `etcd` data. 
