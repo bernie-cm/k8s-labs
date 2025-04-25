@@ -16,8 +16,12 @@ Snapshot saved at etcd-backup
 
 ### Restoring the etcd backup
 
-To restore the backup we use again the `etcdctl` CLI tool and the `snapshot` command.
+To restore the backup we use again the `etcdctl` CLI tool and the `snapshot` command. What's key in this task is that the backup will be **restored to an `etcd` directory**. That's why we use the `--data-dir` option with the command.
 
 ```bash
-# Second perform the 
+# Second perform the restore operation
+# The command here will restore the backup to the /var/lib/etcd-backup directory
+$ etcdctl snapshot restore etcd-backup --data-dir /var/lib/etcd-backup
+
+# ... Output omitted
 ```
