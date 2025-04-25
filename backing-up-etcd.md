@@ -1,4 +1,4 @@
-# Backing up and restoring the etcd datastore
+# How to Rescue Your Kubernetes Cluster with etcd Backups
 
 ### How to perform a backup of the etcd datastore
 To back up the cluster store, or `etcd`, we can create a snapshot file using the CLI tool `etcdctl`. This lab assumes a successful installation of the `etcdctl` tool and that prior knowledge of what `etcd` is and its purpose exists.
