@@ -7,10 +7,17 @@ To back up the cluster store, or `etcd`, we can create a snapshot file using the
 # First perform the backup with snapshot option 
 $ etcdctl snapshot save etcd-backup --cacert /etc/kubernetes/pki/etcd/ca.crt --cert /etc/kubernetes/pki/etcd/server.crt --key /etc/kubernetes/pki/etcd/server.crt
 
-# Output omitted
+# ... Output omitted
 Snapshot saved at etcd-backup
 ```
 `--cacert` verifies certificates using the k8s Certificate Authority (CA)
 `--cert` identifies secure client using the `etcd` server certificate
 `--key` identifies secure client using the `etcd` key file
 
+### Restoring the etcd backup
+
+To restore the backup we use again the `etcdctl` CLI tool and the `snapshot` command.
+
+```bash
+# Second perform the 
+```
