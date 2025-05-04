@@ -355,5 +355,3 @@ spec:
   - Bandwidth limiting
   - Traffic shaping
   - Priority queuing
-
-This expanded guide covers more advanced topics in Kubernetes networking, providing a comprehensive reference for both basic and complex networking scenarios.
