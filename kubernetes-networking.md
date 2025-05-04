@@ -1,4 +1,4 @@
-# Expanded Kubernetes Networking Study Notes
+# Kubernetes Networking Study Notes
 
 ## Linux Networking Basics
 
